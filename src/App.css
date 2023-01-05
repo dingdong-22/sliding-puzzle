@@ -1,0 +1,12 @@
+body {
+  background-color: rgba(200, 10, 10, 0.75);
+}
+
+.title {
+  text-align: center;
+}
+
+.size-selector {
+  display: flex;
+  justify-content: center;
+}

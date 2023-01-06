@@ -1,3 +1,5 @@
+import Board from "./Board";
+
 function BoardSizeInput(props) {
   return (
     <div className="size-selector">
@@ -8,7 +10,7 @@ function BoardSizeInput(props) {
           value={props.size}
           onChange={(e) => {
             props.setSize(e.target.value);
-            console.log(props.size);
+            props.setBoard(Board(props));
           }}
         ></input>
       </label>

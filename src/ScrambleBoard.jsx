@@ -59,6 +59,7 @@ function ScrambleBoard(props) {
       }
     }
     props.setOrder(newOrder);
+    props.setShuffled(true)
   }
 
   return (

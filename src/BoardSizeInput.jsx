@@ -5,7 +5,7 @@ function BoardSizeInput(props) {
 
   function confirmSize() {
     if (props.play) {
-      return
+      return;
     }
     let root = document.querySelector(":root");
     root.style.setProperty("--size", size);
@@ -14,6 +14,7 @@ function BoardSizeInput(props) {
       defaultOrder.push(i);
     }
     props.setOrder(defaultOrder);
+    props.setShuffled(false);
   }
 
   return (

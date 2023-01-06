@@ -1,11 +1,56 @@
 function Board(props) {
   let boardItems = [];
-  console.log(props.play);
-  for (let i of props.order) {
+
+  function moveTile(tileValue, tileIndex) {
+    let newOrder = [...props.order];
+    let n = Math.sqrt(newOrder.length);
+    let zeroIndex = newOrder.indexOf(0);
+    let zeroRow = Math.floor(zeroIndex / n);
+    let tileRow = Math.floor(tileIndex / n);
+    tileValue = parseInt(tileValue);
+    tileIndex = parseInt(tileIndex);
+    if (props.order[tileIndex - 1] === 0) {
+      if (zeroRow === tileRow) {
+        newOrder[zeroIndex] = tileValue;
+        newOrder[tileIndex] = 0;
+      }
+    }
+    if (props.order[tileIndex + 1] === 0) {
+      if (zeroRow === tileRow) {
+        newOrder[zeroIndex] = tileValue;
+        newOrder[tileIndex] = 0;
+      }
+    }
+    if (props.order[tileIndex - n] === 0) {
+      newOrder[zeroIndex] = tileValue;
+      newOrder[tileIndex] = 0;
+    }
+    if (props.order[tileIndex + n] === 0) {
+      newOrder[zeroIndex] = tileValue;
+      newOrder[tileIndex] = 0;
+    }
+
+    props.setOrder(newOrder);
+  }
+
+  for (let i = 0; i < props.order.length; i++) {
     if (!props.play) {
-      boardItems.push(<div className="tile">{i}</div>);
+      boardItems.push(
+        <div id={i} className="tile">
+          {props.order[i]}
+        </div>
+      );
     } else {
-      boardItems.push(<button className="tile">{i}</button>);
+      boardItems.push(
+        <button
+          id={i}
+          className="tile"
+          onClick={(e) => moveTile(e.target.innerText, e.target.id)}
+          value="123"
+        >
+          {props.order[i]}
+        </button>
+      );
     }
   }
   return boardItems;

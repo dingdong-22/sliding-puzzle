@@ -2,12 +2,10 @@ import { useState } from "react";
 
 function BoardSizeInput(props) {
   let [size, setSize] = useState(0);
-  let root = document.querySelector(":root");
-  root.style.setProperty("--size", size);
-
-  console.log("size", size);
 
   function confirmSize() {
+    let root = document.querySelector(":root");
+    root.style.setProperty("--size", size);
     let defaultOrder = [];
     for (let i = 0; i < size ** 2; i++) {
       defaultOrder.push(i);

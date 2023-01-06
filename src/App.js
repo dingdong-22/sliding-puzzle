@@ -12,15 +12,12 @@ function App() {
       <div className="title">
         <h1>Sliding Puzzle Game</h1>
       </div>
-      <BoardSizeInput
-        order={order}
-        setOrder={setOrder}
-      />
+      <BoardSizeInput order={order} setOrder={setOrder} />
       <div className="board">
         <Board order={order} />
       </div>
       <div className="scramble-button-container">
-        {/* <ScrambleBoard size={size} order={order} setOrder={setOrder} /> */}
+        <ScrambleBoard order={order} setOrder={setOrder} />
       </div>
     </div>
   );

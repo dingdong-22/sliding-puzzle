@@ -29,12 +29,17 @@ body {
   text-align: center;
 }
 
-.scramble-button-container {
+.temp-button-container {
   display: flex;
   justify-content: center;
 }
 
-.scramble-button {
+.scramble-button{
+  width: auto;
+  height: 20px;
+}
+
+.play-button {
   width: auto;
   height: 20px;
 }

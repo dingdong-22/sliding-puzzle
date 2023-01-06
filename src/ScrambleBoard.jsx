@@ -46,6 +46,9 @@ function solvable(newOrder, zeroRow) {
 
 function ScrambleBoard(props) {
   function scramble() {
+    if (props.play) {
+      return;
+    }
     let newOrder = [...props.order];
     let n = Math.sqrt(newOrder.length);
     while (newOrder.length > 0) {

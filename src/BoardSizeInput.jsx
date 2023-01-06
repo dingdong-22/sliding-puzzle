@@ -4,6 +4,9 @@ function BoardSizeInput(props) {
   let [size, setSize] = useState(0);
 
   function confirmSize() {
+    if (props.play) {
+      return
+    }
     let root = document.querySelector(":root");
     root.style.setProperty("--size", size);
     let defaultOrder = [];

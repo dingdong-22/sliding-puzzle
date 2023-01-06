@@ -21,9 +21,20 @@ body {
   justify-content: center;
   grid-template-rows: repeat(var(--size), 50px);
   grid-template-columns: repeat(var(--size), 50px);
-  margin: 2rem;
+  margin: 20px;
 }
 
 .tile {
   background-color: rgb(255, 255, 51);
+  text-align: center;
+}
+
+.scramble-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.scramble-button {
+  width: auto;
+  height: 20px;
 }

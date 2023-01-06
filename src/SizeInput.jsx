@@ -1,10 +1,9 @@
 import { useState } from "react";
 
-function BoardSizeInput(props) {
+function SizeInput(props) {
   let [size, setSize] = useState(0);
-
   function confirmSize() {
-    if (props.play) {
+    if (props.lock) { 
       return;
     }
     let root = document.querySelector(":root");
@@ -13,8 +12,13 @@ function BoardSizeInput(props) {
     for (let i = 0; i < size ** 2; i++) {
       defaultOrder.push(i);
     }
+    defaultOrder.push(defaultOrder.shift());
+
     props.setOrder(defaultOrder);
+    props.setCorrectOrder(defaultOrder);
     props.setShuffled(false);
+    props.setAnswer([])
+
   }
 
   return (
@@ -35,4 +39,4 @@ function BoardSizeInput(props) {
   );
 }
 
-export default BoardSizeInput;
+export default SizeInput;

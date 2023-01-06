@@ -32,14 +32,10 @@ body {
 .temp-button-container {
   display: flex;
   justify-content: center;
+  gap: 10px;
 }
 
-.scramble-button{
-  width: auto;
-  height: 20px;
-}
-
-.play-button {
+.scramble-button .lock-button, .solve-button{
   width: auto;
   height: 20px;
 }

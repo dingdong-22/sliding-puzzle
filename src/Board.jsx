@@ -31,10 +31,23 @@ function Board(props) {
     }
 
     props.setOrder(newOrder);
+
+    checkAnswer(newOrder);
+  }
+
+  function checkAnswer(order) {
+    for (let i = 0; i < order.length; i++) {
+      if (order[i] === props.correctOrder[i]) {
+        continue;
+      } else {
+        return false;
+      }
+    }
+    return true;
   }
 
   for (let i = 0; i < props.order.length; i++) {
-    if (!props.play) {
+    if (!props.lock) {
       boardItems.push(
         <div id={i} className="tile">
           {props.order[i]}

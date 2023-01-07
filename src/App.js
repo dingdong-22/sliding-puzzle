@@ -6,11 +6,16 @@ import SizeInput from "./SizeInput.jsx";
 import Lock from "./Lock";
 import ScrambleBoard from "./ScrambleBoard.jsx";
 import AutoPlay from "./AutoPlay";
+import AnswerDisplay from "./AnswerDisplay";
 
 function App() {
-  let [order, setOrder] = useState([]); //keeps track of current tile order
-  let [shuffled, setShuffled] = useState(false); //if true then can lock
-  let [lock, setLock] = useState(false); //lock board to allow user input
+  //keeps track of current tile order
+  let [order, setOrder] = useState([]);
+  //if true then can lock
+  let [shuffled, setShuffled] = useState(false);
+  //lock board to allow user input
+  let [lock, setLock] = useState(false);
+  //used to compare current order to correct order
   let [correctOrder, setCorrectOrder] = useState([]);
   let [answer, setAnswer] = useState([]);
 
@@ -33,6 +38,7 @@ function App() {
           setOrder={setOrder}
           lock={lock}
           correctOrder={correctOrder}
+          answer={answer}
           setAnswer={setAnswer} //may need to reset if user does not follow correctly
         />
       </div>
@@ -56,13 +62,10 @@ function App() {
         <AutoPlay order={order} setOrder={setOrder} answer={answer} />
       </div>
       <div className="answer-container">
-        <p>{answer.join(",")}</p>
+        <AnswerDisplay answer={answer} setAnswer={setAnswer} />
       </div>
     </div>
   );
 }
 
 export default App;
-
-//add detect valid ending
-//add auto Solverr

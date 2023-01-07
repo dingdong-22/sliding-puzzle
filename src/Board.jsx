@@ -31,7 +31,15 @@ function Board(props) {
     }
 
     props.setOrder(newOrder);
-
+    if (props.answer.length !== 0) {
+      if (tileValue === props.answer[0]) {
+        let newAnswer = [...props.answer];
+        newAnswer.shift();
+        props.setAnswer(newAnswer);
+      } else {
+        props.setAnswer([]);
+      }
+    }
     checkAnswer(newOrder);
   }
 

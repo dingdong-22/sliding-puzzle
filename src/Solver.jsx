@@ -213,7 +213,7 @@ function slidePuzzle(order, correctOrder, setAnswer) {
       SOI++;
       if (SOI === solveOrder.length) {
         console.log(
-          "Done",
+          "Answer:",
           seq.map((x) => parseInt(x))
         );
         setAnswer(seq.map((x) => parseInt(x)));
@@ -329,13 +329,19 @@ function Solver(props) {
     return (
       <div>
         <button
-          className="Solver-button"
+          className="solver-button"
           onClick={() => {
             slidePuzzle(props.order, props.correctOrder, props.setAnswer);
           }}
         >
           show solution
         </button>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <button className="blank-button"></button>
       </div>
     );
   }

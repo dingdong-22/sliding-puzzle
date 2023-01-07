@@ -23,9 +23,9 @@ function SizeInput(props) {
   }
 
   return (
-    <div className="size-selector">
-      <label htmlFor="size-input-box">
-        Enter board size:
+    <div className="size-input-container">
+      <label htmlFor="size-input-box">Enter board size (3-20):</label>
+      <div>
         <input
           id="size-input-box"
           type="number"
@@ -34,8 +34,11 @@ function SizeInput(props) {
             setSize(e.target.value);
           }}
         ></input>
-      </label>
-      <button onClick={confirmSize}>Confirm</button>
+
+        <button className="size-button" onClick={confirmSize}>
+          confirm
+        </button>
+      </div>
     </div>
   );
 }

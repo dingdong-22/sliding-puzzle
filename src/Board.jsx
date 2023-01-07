@@ -57,9 +57,8 @@ function Board(props) {
       boardItems.push(
         <button
           id={i}
-          className="tile"
+          className="locked-tile"
           onClick={(e) => moveTile(e.target.innerText, e.target.id)}
-          value="123"
         >
           {props.order[i]}
         </button>

@@ -45,7 +45,6 @@ function solvable(newOrder, zeroRow) {
 }
 
 function ScrambleBoard(props) {
-
   function scramble() {
     if (props.lock) {
       return;
@@ -59,10 +58,10 @@ function ScrambleBoard(props) {
         break;
       }
     }
-    console.log(newOrder);
+    console.log("New order:", newOrder);
     props.setOrder(newOrder);
     props.setShuffled(true);
-    props.setAnswer([])
+    props.setAnswer([]);
   }
 
   return (

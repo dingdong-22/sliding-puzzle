@@ -36,7 +36,7 @@ function App() {
           setAnswer={setAnswer} //may need to reset if user does not follow correctly
         />
       </div>
-      <div className="temp-button-container">
+      <div className="functions-container">
         <ScrambleBoard
           order={order}
           setOrder={setOrder}
@@ -55,7 +55,7 @@ function App() {
         />
         <AutoPlay order={order} setOrder={setOrder} answer={answer} />
       </div>
-      <div>
+      <div className="answer-container">
         <p>{answer}</p>
       </div>
     </div>

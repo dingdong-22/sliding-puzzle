@@ -1,6 +1,6 @@
 function AutoPlay(props) {
   function moveTile(n, order, tileValue, tileIndex) {
-    console.log("Moved")
+    console.log("Moved");
     let zeroIndex = order.indexOf(0);
     let zeroRow = Math.floor(zeroIndex / n);
     let tileRow = Math.floor(tileIndex / n);
@@ -34,10 +34,9 @@ function AutoPlay(props) {
       let tileIndex = newOrder.indexOf(tileValue);
       setTimeout(moveTile(n, newOrder, tileValue, tileIndex), 1000 * i);
       // moveTile(n, newOrder, tileValue, tileIndex);
-      console.log("before", props.order)
+      console.log("before", props.order);
       props.setOrder(newOrder);
-      console.log("after", props.order)
-
+      console.log("after", props.order);
     }
   }
   if (props.answer.length > 0) {
@@ -46,6 +45,12 @@ function AutoPlay(props) {
         <button className="play-solution-button" onClick={() => play()}>
           play solution
         </button>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <button className="blank-button"></button>
       </div>
     );
   }

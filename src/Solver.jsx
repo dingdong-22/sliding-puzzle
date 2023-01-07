@@ -326,18 +326,33 @@ function slidePuzzle(order, correctOrder, setAnswer) {
 
 function Solver(props) {
   if (props.shuffled) {
-    return (
-      <div>
-        <button
-          className="solver-button"
-          onClick={() => {
-            slidePuzzle(props.order, props.correctOrder, props.setAnswer);
-          }}
-        >
-          show solution
-        </button>
-      </div>
-    );
+    if (props.answer.length === 0) {
+      return (
+        <div>
+          <button
+            className="solver-button"
+            onClick={() => {
+              slidePuzzle(props.order, props.correctOrder, props.setAnswer);
+            }}
+          >
+            show solution
+          </button>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <button
+            className="solver-button"
+            onClick={() => {
+              props.setAnswer([]);
+            }}
+          >
+            hide solution
+          </button>
+        </div>
+      );
+    }
   } else {
     return (
       <div>

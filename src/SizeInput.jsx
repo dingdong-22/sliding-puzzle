@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function SizeInput(props) {
-  let [size, setSize] = useState(0);
+  let [size, setSize] = useState(3);
   let min = 3;
   let max = 20;
   function confirmSize() {

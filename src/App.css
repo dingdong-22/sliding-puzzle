@@ -1,16 +1,60 @@
+/* light theme */
 :root {
   --size: 0;
+  --clr-main-background: #e6bb9e;
+  --clr-title-text: #29524a;
+  --clr-main-text: #f6f5f4;
+  --clr-main-button-hover: #593c8f;
+  --clr-main-button-active: #9b70ff;
+  --clr-tile-unlocked: #84a98c;
+  --clr-zero-tile-unlocked: #3b8ea5;
+  --clr-tile-locked: #094074;
+  --clr-tile-locked-hover: #5085b9;
+  --clr-tile-locked-active: #5085b9;
+  --clr-zero-tile-locked: #ffd60a;
+  --clr-zero-tile-locked-hover: #ffa733;
+  --clr-functional-buttons: #7d7abc;
+  --clr-answer-display: #878787;
+  --clr-answer-boxes: #c492b1;
+  --clr-next-move: #ff9e1f;
+  --clr-text1: #b50353;
+  --clr-tile-unlocked-border: #003d1f;
+  --clr-tile-locked-border: #003d1f;
 }
 
+/* dark theme */
+/* :root {
+  --size: 0;
+  --clr-main-background: #0a2647;
+  --clr-main-text: #f6f5f4;
+  --clr-main-button-hover: #b388eb;
+  --clr-main-button-active: #9b70ff;
+  --clr-tile-unlocked: #a85710;
+  --clr-zero-tile-unlocked: #724660;
+  --clr-tile-locked: #db222a;
+  --clr-tile-locked-hover: #ffd60a;
+  --clr-tile-locked-active: #ffae03;
+  --clr-zero-tile-locked: #ffd60a;
+  --clr-zero-tile-locked-hover: #ffd60a;
+  --clr-functional-buttons: #534b62;
+  --clr-answer-display: #1a7474;
+  --clr-answer-boxes: purple;
+  --clr-next-move: black;
+  --clr-text1: #b50353;
+  --clr-tile-unlocked-border: #003d1f;
+  --clr-tile-locked-border: #003d1f;
+} */
+
 body {
-  background-color: #0a2647;
+  background-color: var(--clr-main-background);
   display: grid;
   place-items: center;
-  color: #f6f5f4;
+  color: var(--clr-main-text);
 }
 
 .title {
   text-align: center;
+  color: var(--clr-title-text);
 }
 
 label {
@@ -20,14 +64,16 @@ label {
 .size-input-container {
   display: grid;
   place-items: center;
+  color: var(--clr-text1);
+  font-weight: 550;
 }
 
 .board {
   display: grid;
   justify-content: center;
   margin: 10px;
-  grid-template-rows: repeat(var(--size), 50px);
-  grid-template-columns: repeat(var(--size), 50px);
+  grid-template-rows: repeat(var(--size), 75px);
+  grid-template-columns: repeat(var(--size), 75px);
 }
 
 button:hover {
@@ -35,53 +81,58 @@ button:hover {
   transform: translate(0px, -3px);
   -webkit-transform: translate(0px, -3px);
   box-shadow: 0px 1px 0px 0px;
-  background-color: #b388eb;
+  background-color: var(--clr-main-button-hover);
 }
 
 button:active {
   transform: translate(0px, 3px);
   -webkit-transform: translate(0px, 3px);
   box-shadow: 0px 1px 0px 0px;
-  background-color: #9b70ff;
+  background-color: var(--clr-main-button-active);
 }
 
 .tile,
 .locked-tile,
 .zero-tile,
 .locked-zero-tile {
+  color: white;
   margin: 0.5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #a85710;
-  font-size: 1.2rem;
-  border: 2.5px black solid;
+  background-color: var(--clr-tile-unlocked);
+  font-size: 1.8rem;
+  border: 2px var(--clr-tile-unlocked-border) solid;
 }
 
 .zero-tile {
-  background-color: #724660;
-}
-
-.locked-zero-tile {
-  background-color: #ffd60a;
-  border-radius: 0.6rem;
-}
-
-.locked-zero-tile:hover {
-  background-color: #ffd60a;
+  background-color: var(--clr-zero-tile-unlocked);
 }
 
 .locked-tile {
-  background-color: #db222a;
+  background-color: var(--clr-tile-locked);
   border-radius: 0.6rem;
+  border: 2.5px white solid;
 }
 
 .locked-tile:hover {
-  background-color: #ffd60a;
+  background-color: var(--clr-tile-locked-hover);
 }
 
 .locked-tile:active {
-  background-color: #ffae03;
+  background-color: var(--clr-tile-locked-active);
+}
+
+.locked-zero-tile {
+  background-color: var(--clr-zero-tile-locked);
+  border-radius: 0.6rem;
+  border: 2.5px black solid;
+
+  color: black;
+}
+
+.locked-zero-tile:hover {
+  background-color: var(--clr-zero-tile-locked-hover);
 }
 
 .functions-container {
@@ -97,7 +148,7 @@ button:active {
 .play-solution-button,
 .blank-button,
 .size-button {
-  background-color: #534b62;
+  background-color: var(--clr-functional-buttons);
   color: white;
   border: 2px white solid;
   font-size: 0.9rem;
@@ -128,14 +179,14 @@ button:active {
 }
 
 .display-container {
-  background-color: #1a7474;
+  background-color: var(--clr-answer-display);
   display: grid;
   place-items: center;
   width: 100px;
   font-size: 1.25rem;
   overflow: hidden;
   border-radius: 1rem;
-  max-height: 208px;
+  max-height: 156px;
 }
 
 .answer-value {
@@ -144,12 +195,19 @@ button:active {
   float: left;
   width: 50px;
   height: 50px;
-  background-color: purple;
+  background-color: var(--clr-answer-boxes);
   border: 1px black solid;
 }
 
 #pos0.answer-value {
   font-size: 2rem;
   font-weight: 600;
-  background-color: black;
+  background-color: var(--clr-next-move);
+}
+
+.moves-left {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-weight: 550;
+  color: var(--clr-text1);
 }

@@ -12,7 +12,7 @@ function AnswerDisplay(props) {
   if (props.answer.length > 0) {
     return (
       <div>
-        <p>Moves left {props.answer.length}</p>
+        <p className="moves-left">Moves left {props.answer.length}</p>
         <div className="display-container">{createDisplay()}</div>
       </div>
     );

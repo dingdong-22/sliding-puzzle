@@ -5,6 +5,7 @@ import Board from "./Board";
 import SizeInput from "./SizeInput.jsx";
 import Lock from "./Lock";
 import ScrambleBoard from "./ScrambleBoard.jsx";
+import AutoPlay from "./AutoPlay";
 
 function App() {
   let [order, setOrder] = useState([]); //keeps track of current tile order
@@ -47,10 +48,12 @@ function App() {
         <Solver
           order={order}
           setOrder={setOrder}
+          shuffled={shuffled}
           correctOrder={correctOrder}
           answer={answer}
           setAnswer={setAnswer}
         />
+        <AutoPlay order={order} setOrder={setOrder} answer={answer} />
       </div>
       <div>
         <p>{answer}</p>

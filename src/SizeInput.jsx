@@ -2,8 +2,10 @@ import { useState } from "react";
 
 function SizeInput(props) {
   let [size, setSize] = useState(0);
+  let min = 3;
+  let max = 20;
   function confirmSize() {
-    if (props.lock) { 
+    if (props.lock || size < min || size > max) {
       return;
     }
     let root = document.querySelector(":root");
@@ -17,8 +19,7 @@ function SizeInput(props) {
     props.setOrder(defaultOrder);
     props.setCorrectOrder(defaultOrder);
     props.setShuffled(false);
-    props.setAnswer([])
-
+    props.setAnswer([]);
   }
 
   return (

@@ -37,20 +37,20 @@ function distanceCalc(tileList, board, targetLocations) {
 }
 
 function moveZeroToTile(a, b) {
-  let aZeroDist = a[6];
-  let bZeroDist = b[6];
+  let [aMoves, aDist, aZeroDist] = [a[2].length, a[4], a[6]];
+  let [bMoves, bDist, bZeroDist] = [b[2].length, b[4], b[6]];
   return bZeroDist - aZeroDist;
 }
 
 function moveTileToTarget(a, b) {
-  let aDist, aZeroDist = [a[4], a[6]];
-  let bDist, bZeroDist = [b[4], b[6]];
+  let [aMoves, aDist, aZeroDist] = [a[2].length, a[4], a[6]];
+  let [bMoves, bDist, bZeroDist] = [b[2].length, b[4], b[6]];
   return bDist - aDist || bZeroDist - aZeroDist;
 }
 
 function twoTilesMoveToTarget(a, b) {
-  let [aMoves, aDist] = [a[2].length, a[4]];
-  let [bMoves, bDist] = [b[2].length, b[4]];
+  let [aMoves, aDist, aZeroDist] = [a[2].length, a[4], a[6]];
+  let [bMoves, bDist, bZeroDist] = [b[2].length, b[4], b[6]];
   return bMoves + bDist - (aMoves + aDist);
 }
 
@@ -94,7 +94,8 @@ function convertToNestedArr(n, arr) {
   return board.map((x) => x.map((x) => x.toString()));
 }
 
-function slidingPuzzle(order, correctOrder, setAnswer) {
+//insert props order and props answer
+function slidePuzzle(order, correctOrder, setAnswer) {
   //convert to 2d matrix
   let n = Math.sqrt(order.length);
   let board = convertToNestedArr(n, order);
@@ -324,18 +325,20 @@ function slidingPuzzle(order, correctOrder, setAnswer) {
 }
 
 function Solver(props) {
-  return (
-    <div>
-      <button
-        className="solver-button"
-        onClick={() => {
-          slidingPuzzle(props.order, props.correctOrder, props.setAnswer);
-        }}
-      >
-        show solution
-      </button>
-    </div>
-  );
+  if (props.shuffled) {
+    return (
+      <div>
+        <button
+          className="Solver-button"
+          onClick={() => {
+            slidePuzzle(props.order, props.correctOrder, props.setAnswer);
+          }}
+        >
+          show solution
+        </button>
+      </div>
+    );
+  }
 }
 
 export default Solver;

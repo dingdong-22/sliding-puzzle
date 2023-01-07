@@ -3,7 +3,9 @@
 }
 
 body {
+  display: flex;
   background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
 }
 
 .title {
@@ -13,6 +15,7 @@ body {
 .size-selector {
   display: flex;
   justify-content: center;
+  gap: 10px;
 }
 
 .board {
@@ -35,7 +38,8 @@ body {
   gap: 10px;
 }
 
-.scramble-button .lock-button, .solve-button{
+.scramble-button .lock-button,
+.solve-button {
   width: auto;
   height: 20px;
 }

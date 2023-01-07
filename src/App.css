@@ -117,7 +117,7 @@ button:active {
   background-color: #1a7474;
   overflow-wrap: break-word;
   word-break: break-all;
-  letter-spacing: 1rem;
+  letter-spacing: 1px;
   padding: 10px;
   margin: 10px;
   text-align: center;

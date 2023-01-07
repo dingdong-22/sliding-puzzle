@@ -34,7 +34,6 @@ function SizeInput(props) {
             setSize(e.target.value);
           }}
         ></input>
-
         <button className="size-button" onClick={confirmSize}>
           confirm
         </button>

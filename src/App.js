@@ -56,7 +56,7 @@ function App() {
         <AutoPlay order={order} setOrder={setOrder} answer={answer} />
       </div>
       <div className="answer-container">
-        <p>{answer}</p>
+        <p>{answer.join(",")}</p>
       </div>
     </div>
   );

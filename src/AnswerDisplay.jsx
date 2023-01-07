@@ -9,8 +9,14 @@ function AnswerDisplay(props) {
     });
     return mapping;
   }
-
-  return <div className="display-container">{createDisplay()}</div>;
+  if (props.answer.length > 0) {
+    return (
+      <div>
+        <p>Moves left {props.answer.length}</p>
+        <div className="display-container">{createDisplay()}</div>
+      </div>
+    );
+  }
 }
 
 export default AnswerDisplay;

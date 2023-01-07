@@ -48,21 +48,41 @@ function Board(props) {
 
   for (let i = 0; i < props.order.length; i++) {
     if (!props.lock) {
-      boardItems.push(
-        <div id={i} className="tile">
-          {props.order[i]}
-        </div>
-      );
+      if (props.order[i] !== 0) {
+        boardItems.push(
+          <div id={i} className="tile">
+            {props.order[i]}
+          </div>
+        );
+      } else {
+        boardItems.push(
+          <div id={i} className="zero-tile">
+            {props.order[i]}
+          </div>
+        );
+      }
     } else {
-      boardItems.push(
-        <button
-          id={i}
-          className="locked-tile"
-          onClick={(e) => moveTile(e.target.innerText, e.target.id)}
-        >
-          {props.order[i]}
-        </button>
-      );
+      if (props.order[i] !== 0) {
+        boardItems.push(
+          <button
+            id={i}
+            className="locked-tile"
+            onClick={(e) => moveTile(e.target.innerText, e.target.id)}
+          >
+            {props.order[i]}
+          </button>
+        );
+      } else {
+        boardItems.push(
+          <button
+            id={i}
+            className="locked-zero-tile"
+            onClick={(e) => moveTile(e.target.innerText, e.target.id)}
+          >
+            {props.order[i]}
+          </button>
+        );
+      }
     }
   }
   return boardItems;

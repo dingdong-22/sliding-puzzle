@@ -33,22 +33,6 @@ label {
   grid-template-columns: repeat(var(--size), 50px);
 }
 
-.tile,
-.locked-tile {
-  margin: 0.5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #a85710;
-  font-size: 1.2rem;
-  border: 2.5px black solid;
-}
-
-.locked-tile {
-  background-color: #db222a;
-  border-radius: 0.6rem;
-}
-
 button:hover {
   transform: translate(0px, -3px);
   -webkit-transform: translate(0px, -3px);
@@ -61,6 +45,37 @@ button:active {
   -webkit-transform: translate(0px, 3px);
   box-shadow: 0px 1px 0px 0px;
   background-color: #9b70ff;
+}
+
+.tile,
+.locked-tile,
+.zero-tile,
+.locked-zero-tile {
+  margin: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a85710;
+  font-size: 1.2rem;
+  border: 2.5px black solid;
+}
+
+.zero-tile {
+  background-color: #724660;
+}
+
+.locked-zero-tile {
+  background-color: #ffd60a;
+  border-radius: 0.6rem;
+}
+
+.locked-zero-tile:hover {
+  background-color: #ffd60a;
+}
+
+.locked-tile {
+  background-color: #db222a;
+  border-radius: 0.6rem;
 }
 
 .locked-tile:hover {

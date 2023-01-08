@@ -325,7 +325,7 @@ function slidePuzzle(order, correctOrder, setAnswer) {
 }
 
 function Solver(props) {
-  if (props.shuffled) {
+  if (props.order.length > 0) {
     if (props.answer.length === 0) {
       return (
         <div>
@@ -335,7 +335,7 @@ function Solver(props) {
               slidePuzzle(props.order, props.correctOrder, props.setAnswer);
             }}
           >
-            show solution
+            Show Solution
           </button>
         </div>
       );
@@ -348,7 +348,7 @@ function Solver(props) {
               props.setAnswer([]);
             }}
           >
-            hide solution
+            Hide Solution
           </button>
         </div>
       );

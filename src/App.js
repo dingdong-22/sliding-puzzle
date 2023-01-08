@@ -19,6 +19,7 @@ function App() {
   let [correctOrder, setCorrectOrder] = useState([]);
   let [answer, setAnswer] = useState([]);
 
+  //if locked and order === answer then display well done retry
   return (
     <div>
       <div className="title">
@@ -50,7 +51,7 @@ function App() {
           lock={lock}
           setAnswer={setAnswer}
         />
-        <Lock shuffled={shuffled} lock={lock} setLock={setLock} />
+        <Lock order={order} shuffled={shuffled} lock={lock} setLock={setLock} />
         <Solver
           order={order}
           setOrder={setOrder}

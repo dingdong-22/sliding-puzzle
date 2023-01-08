@@ -63,11 +63,12 @@ function ScrambleBoard(props) {
     props.setShuffled(true);
     props.setAnswer([]);
   }
-  if (!props.lock) {
+
+  if (!props.lock && props.order.length > 0) {
     return (
       <div>
         <button className="scramble-button" onClick={scramble}>
-          scramble
+          Scramble
         </button>
       </div>
     );

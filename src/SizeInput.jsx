@@ -5,11 +5,29 @@ function SizeInput(props) {
   let min = 3;
   let max = 20;
   function confirmSize() {
+    let root = document.querySelector(":root");
     if (props.lock || size < min || size > max) {
+      root.style.setProperty(
+        "--clr-input-border",
+        "var(--clr-input-border-invalid)"
+      );
+      root.style.setProperty(
+        "--clr-input-background",
+        "var(--clr-input-background-invalid)"
+      );
       return;
     }
-    let root = document.querySelector(":root");
+
     root.style.setProperty("--size", size);
+    root.style.setProperty(
+      "--clr-input-border",
+      "var(--clr-input-border-valid)"
+    );
+    root.style.setProperty(
+      "--clr-input-background",
+      "var(--clr-input-background-valid)"
+    );
+
     let defaultOrder = [];
     for (let i = 0; i < size ** 2; i++) {
       defaultOrder.push(i);
@@ -28,14 +46,14 @@ function SizeInput(props) {
       <div>
         <input
           id="size-input-box"
-          type="number"
+          type="text"
           value={size}
           onChange={(e) => {
             setSize(e.target.value);
           }}
         ></input>
         <button className="size-button" onClick={confirmSize}>
-          confirm
+          Confirm
         </button>
       </div>
     </div>

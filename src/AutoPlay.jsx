@@ -43,7 +43,7 @@ function AutoPlay(props) {
     return (
       <div>
         <button className="play-solution-button" onClick={() => play()}>
-          play solution
+          Play Solution
         </button>
       </div>
     );

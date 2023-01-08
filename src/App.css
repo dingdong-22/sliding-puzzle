@@ -205,27 +205,25 @@ button:active {
 }
 
 .answer-container {
-  display: grid;
-  place-items: center;
+  display: flex;
 }
 
 .display-container {
-  background-color: var(--clr-answer-display);
-  display: grid;
-  place-items: center;
-  width: 100px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  max-width: 294px;
   font-size: 1.25rem;
   overflow: hidden;
-  border-radius: 1rem;
-  max-height: 156px;
+  max-height: 147px;
 }
 
 .answer-value {
   display: grid;
   place-items: center;
   float: left;
-  width: 60px;
-  height: 60px;
+  min-width: 45px;
+  min-height: 45px;
   background-color: var(--clr-answer-boxes);
   border: 2px var(--clr-answer-value-border) solid;
   border-radius: 10%;
@@ -237,8 +235,9 @@ button:active {
 }
 
 .moves-left {
-  margin-top: 0px;
-  margin-bottom: 5px;
+  display: inline;
+  margin-left: 10px;
   font-weight: 550;
+  float: right;
   color: var(--clr-text1);
 }

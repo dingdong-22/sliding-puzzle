@@ -1,14 +1,10 @@
-import { useState } from "react";
-
 function AutoPlay(props) {
-  let [on, setOn] = useState(false);
-
   function play() {
     let n = Math.sqrt(props.order.length);
     let order = [...props.order];
-
+    let answer = [...props.answer];
     function moveTile(n, i) {
-      let tileValue = props.answer[i];
+      let tileValue = answer.shift();
       let tileIndex = order.indexOf(tileValue);
       let zeroIndex = order.indexOf(0);
       let zeroRow = Math.floor(zeroIndex / n);
@@ -33,17 +29,21 @@ function AutoPlay(props) {
         order[zeroIndex] = tileValue;
         order[tileIndex] = 0;
       }
+      props.setAnswer(answer);
       props.setOrder([...order]);
+      if (answer.length === 0) {
+        props.setOn(false);
+      }
     }
 
-    setOn(!on);
+    props.setOn(!props.on);
 
     for (let i = 0; i < props.answer.length; i++) {
-      setTimeout(() => moveTile(n, i), 250 * i);
+      setTimeout(() => moveTile(n, i), 350 * i);
     }
   }
 
-  if (props.answer.length > 0 && !on) {
+  if (props.answer.length > 0 && !props.on) {
     return (
       <div>
         <button className="play-solution-button" onClick={() => play()}>

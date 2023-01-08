@@ -19,6 +19,7 @@ function App() {
   //used to compare current order to correct order
   let [correctOrder, setCorrectOrder] = useState([]);
   let [answer, setAnswer] = useState([]);
+  let [on, setOn] = useState(false);
 
   function checkAnswer(order) {
     for (let i = 0; i < order.length; i++) {
@@ -72,10 +73,21 @@ function App() {
           answer={answer}
           setAnswer={setAnswer}
         />
-        <AutoPlay order={order} setOrder={setOrder} answer={answer} />
+        <AutoPlay
+          order={order}
+          setOrder={setOrder}
+          answer={answer}
+          setAnswer={setAnswer}
+          on={on}
+          setOn={setOn}
+        />
       </div>
       <div className="answer-container">
-        <AnswerDisplay answer={answer} setAnswer={setAnswer} />
+        <AnswerDisplay
+          correctOrder={correctOrder}
+          answer={answer}
+          setAnswer={setAnswer}
+        />
       </div>
     </div>
   );

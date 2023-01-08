@@ -7,6 +7,7 @@ import Lock from "./Lock";
 import ScrambleBoard from "./ScrambleBoard.jsx";
 import AutoPlay from "./AutoPlay";
 import AnswerDisplay from "./AnswerDisplay";
+import StatusDisplay from "./StatusDisplay";
 
 function App() {
   //keeps track of current tile order
@@ -19,6 +20,16 @@ function App() {
   let [correctOrder, setCorrectOrder] = useState([]);
   let [answer, setAnswer] = useState([]);
 
+  function checkAnswer(order) {
+    for (let i = 0; i < order.length; i++) {
+      if (order[i] === correctOrder[i]) {
+        continue;
+      } else {
+        return false;
+      }
+    }
+    return true;
+  }
   //if locked and order === answer then display well done retry
   return (
     <div>
@@ -33,6 +44,7 @@ function App() {
         setCorrectOrder={setCorrectOrder}
         setAnswer={setAnswer}
       />
+      {shuffled ? checkAnswer(order) ? <StatusDisplay /> : null : null}
       <div className="board">
         <Board
           order={order}

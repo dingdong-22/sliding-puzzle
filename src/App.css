@@ -241,3 +241,11 @@ button:active {
   float: right;
   color: var(--clr-text1);
 }
+
+.status-display {
+  display: grid;
+  place-items: center;
+  color: var(--clr-text1);
+  font-size: 1.5rem;
+  font-weight: 600;
+}

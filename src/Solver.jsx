@@ -165,18 +165,8 @@ function slidePuzzle(order, correctOrder, setAnswer) {
   let escorted = false;
   let twoTiles = false;
   let twoTilesIdx = 0;
-  let seq, d, TF, ZTTD, tileset;
-  let stack = [
-    [
-      board,
-      zero,
-      (seq = new Array()),
-      solveOrderIndex,
-      (d = 0),
-      (TF = []),
-      (ZTTD = 0),
-    ],
-  ];
+  let tileset;
+  let stack = [[board, zero, new Array(), solveOrderIndex, 0, [], 0]];
   while (stack.length > 0) {
     let [board, zero, seq, SOI, d, TF, ZTTD] = stack.pop();
     while (d === 0) {
@@ -249,8 +239,7 @@ function slidePuzzle(order, correctOrder, setAnswer) {
         continue;
       }
 
-      let boardCopy = board.map((x) => x.join());
-      boardCopy = boardCopy.map((x) => x.split(","));
+      let boardCopy = board.map((x) => [...x]);
       boardCopy[zero[0]][zero[1]] = value;
       boardCopy[i][j] = "0";
 
@@ -260,8 +249,7 @@ function slidePuzzle(order, correctOrder, setAnswer) {
       }
       seenBoards.add(hash);
 
-      let TFCopy = TF.map((x) => x.join());
-      TFCopy = TFCopy.map((x) => x.split(",").map((y) => parseInt(y)));
+      let TFCopy = TF.map((x) => [...x]);
 
       if (tileset.includes(value)) {
         let valueTargetLoc = targetLocations[value];

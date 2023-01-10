@@ -36,7 +36,7 @@ function App() {
       setShuffled(false);
       return true;
     }
-    return;
+    return;k
   }
 
   checkAnswer();

@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import SpeedButtons from "./SpeedButtons";
 
 function AutoPlay(props) {
   function play() {
@@ -46,7 +47,7 @@ function AutoPlay(props) {
       let interval;
       interval = setInterval(() => {
         play();
-      }, 200);
+      }, props.seconds);
 
       return () => clearInterval(interval);
     }

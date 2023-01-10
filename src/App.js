@@ -9,6 +9,7 @@ import AutoPlay from "./AutoPlay";
 import AnswerDisplay from "./AnswerDisplay";
 import StatusDisplay from "./StatusDisplay";
 import LightDarkButton from "./LightDarkButton";
+import SpeedButtons from "./SpeedButtons";
 
 function App() {
   let [order, setOrder] = useState([]);
@@ -17,6 +18,7 @@ function App() {
   let [correctOrder, setCorrectOrder] = useState([]);
   let [answer, setAnswer] = useState([]);
   let [on, setOn] = useState(false);
+  let [seconds, setSeconds] = useState(250);
 
   function checkAnswer(order) {
     for (let i = 0; i < order.length; i++) {
@@ -78,8 +80,11 @@ function App() {
           setAnswer={setAnswer}
           on={on}
           setOn={setOn}
+          seconds={seconds}
+          setSeconds={setSeconds}
         />
       </div>
+      <SpeedButtons seconds={seconds} setSeconds={setSeconds} />
       <div className="answer-container">
         <AnswerDisplay
           correctOrder={correctOrder}

@@ -10,7 +10,7 @@ body {
 
   --clr-main-background: #e6bb9e;
   --clr-title-text: #29524a;
-  --clr-main-text: #f6f5f4;
+  --clr-main-text: #b50353;
   --clr-functional-buttons-text: #f3f7f0;
   --clr-text1: #b50353;
   --clr-tile-text: #f3f7f0;
@@ -238,6 +238,7 @@ button:active {
   background-color: var(--clr-answer-boxes);
   border: 2px var(--clr-answer-value-border) solid;
   border-radius: 10%;
+  color: var(--clr-tile-text);
 }
 
 #pos0.answer-value {
@@ -279,4 +280,26 @@ button:active {
   -webkit-transform: none;
   box-shadow: none;
   background-color: var(--clr-functional-buttons);
+}
+
+.speed-buttons-container {
+  display: flex;
+  justify-content: center;
+  font-weight: 550;
+  gap: 10px;
+}
+
+.speed-button {
+  background-color: var(--clr-functional-buttons);
+  color: var(--clr-functional-buttons-text);
+  border: 2px var(--clr-functional-buttons-text) solid;
+  font-size: 0.9rem;
+  width: 50px;
+  height: 25px;
+  border-radius: 20%;
+}
+
+.speed-display {
+  font-weight: 550;
+  text-align: center;
 }

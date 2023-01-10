@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Sliding Puzzle App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Sliding Puzzle Game, the aim of the game is to arrange a scrambled board of size **N** back into it's original position ! <br>The board consists of tiles from **0** to **N^2**, any tiles orthogonally adjacent to tile **0** may switch places with tile **0**.
 
-## Available Scripts
+# Features
 
-In the project directory, you can run:
+![Features](/resource/features.png)
 
-### `npm start`
+## Red
+- Switch between light and dark colour schemes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Blue
+- Enter a value for **N** then confirm to set size
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Green
+- Scramble: Shuffles the board into a random arrangement
+- Lock/Unlock: If the board is locked, you cannot update the board size or scramble, if the board is unlocked you cannot move with the tiles
+- Hide/Show solution: Calculates a valid solution that you can follow along
+- Play/Pause solution: Plays the calculated solution
+- <</>>: Adjusts the speed of the play speed
 
-### `npm test`
+## Orange
+- Displays the move order of the calculated solution, the next move being the highlighted box
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Other Features
+- Timer count when board is scrambled then locked
+- Move count when board is scambled then locked
 
-### `npm run build`
+# Demo
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Demo](/resource/demo.gif)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Authors
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Me =)
 
-### `npm run eject`
+## Acknowledgments
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Algorithm used for shuffling the board is the [Fisher–Yates shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)

@@ -272,6 +272,7 @@ button:active {
 }
 
 .mode-switch-button {
+  margin-top: 10px;
   min-width: 50px;
   border-radius: 20%;
 }

@@ -21,13 +21,17 @@ function StatusDisplay(props) {
     }
   }, [time, props.helped]);
 
-  if (!props.helped) {
+  if (!props.helped && props.shuffled) {
     if (checkAnswer()) {
       return (
         <div className="status-display">Congratulations ! You took: {time}</div>
       );
     } else {
-      return <div className="status-display">Time: {time}</div>;
+      return (
+        <div className="status-display time">
+          Moves: {props.moves} Time: {time}
+        </div>
+      );
     }
   }
 }

@@ -20,6 +20,7 @@ function App() {
   let [on, setOn] = useState(false);
   let [seconds, setSeconds] = useState(250);
   let [helped, setHelped] = useState(false);
+  let [moves, setMoves] = useState(0);
 
   return (
     <div>
@@ -38,8 +39,10 @@ function App() {
       {lock ? (
         <StatusDisplay
           order={order}
+          shuffled={shuffled}
           correctOrder={correctOrder}
           helped={helped}
+          moves={moves}
         />
       ) : null}
       <div className="board">
@@ -50,6 +53,8 @@ function App() {
           correctOrder={correctOrder}
           answer={answer}
           setAnswer={setAnswer}
+          moves={moves}
+          setMoves={setMoves}
         />
       </div>
       <div className="functions-container">
@@ -60,6 +65,7 @@ function App() {
           lock={lock}
           setAnswer={setAnswer}
           setHelped={setHelped}
+          setMoves={setMoves}
         />
         <Lock order={order} shuffled={shuffled} lock={lock} setLock={setLock} />
         <Solver

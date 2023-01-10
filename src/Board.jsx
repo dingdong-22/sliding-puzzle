@@ -13,21 +13,25 @@ function Board(props) {
       if (zeroRow === tileRow) {
         newOrder[zeroIndex] = tileValue;
         newOrder[tileIndex] = 0;
+        props.setMoves(props.moves + 1);
       }
     }
     if (props.order[tileIndex + 1] === 0) {
       if (zeroRow === tileRow) {
         newOrder[zeroIndex] = tileValue;
         newOrder[tileIndex] = 0;
+        props.setMoves(props.moves + 1);
       }
     }
     if (props.order[tileIndex - n] === 0) {
       newOrder[zeroIndex] = tileValue;
       newOrder[tileIndex] = 0;
+      props.setMoves(props.moves + 1);
     }
     if (props.order[tileIndex + n] === 0) {
       newOrder[zeroIndex] = tileValue;
       newOrder[tileIndex] = 0;
+      props.setMoves(props.moves + 1);
     }
 
     props.setOrder(newOrder);

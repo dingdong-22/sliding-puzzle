@@ -267,6 +267,10 @@ button:active {
   font-weight: 600;
 }
 
+.status-display.time {
+  font-size: 1rem;
+}
+
 .mode-switch-button {
   min-width: 50px;
   border-radius: 20%;

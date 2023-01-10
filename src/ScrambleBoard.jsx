@@ -40,7 +40,6 @@ function solvable(newOrder, zeroRow) {
       return false;
     }
   }
-
   return true;
 }
 

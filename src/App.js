@@ -8,15 +8,12 @@ import ScrambleBoard from "./ScrambleBoard.jsx";
 import AutoPlay from "./AutoPlay";
 import AnswerDisplay from "./AnswerDisplay";
 import StatusDisplay from "./StatusDisplay";
+import LightDarkButton from "./LightDarkButton";
 
 function App() {
-  //keeps track of current tile order
   let [order, setOrder] = useState([]);
-  //if true then can lock
   let [shuffled, setShuffled] = useState(false);
-  //lock board to allow user input
   let [lock, setLock] = useState(false);
-  //used to compare current order to correct order
   let [correctOrder, setCorrectOrder] = useState([]);
   let [answer, setAnswer] = useState([]);
   let [on, setOn] = useState(false);
@@ -31,9 +28,10 @@ function App() {
     }
     return true;
   }
-  //if locked and order === answer then display well done retry
+
   return (
     <div>
+      <LightDarkButton />
       <div className="title">
         <h1>Sliding Puzzle Game</h1>
       </div>
@@ -53,7 +51,7 @@ function App() {
           lock={lock}
           correctOrder={correctOrder}
           answer={answer}
-          setAnswer={setAnswer} //may need to reset if user does not follow correctly
+          setAnswer={setAnswer}
         />
       </div>
       <div className="functions-container">

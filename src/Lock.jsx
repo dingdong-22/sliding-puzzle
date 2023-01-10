@@ -5,11 +5,7 @@ function Lock(props) {
         <button
           className="lock-button"
           onClick={() => {
-            if (!props.lock) {
-              props.setLock(true);
-            } else {
-              props.setLock(false);
-            }
+            props.setLock(!props.lock)
           }}
         >
           {props.lock ? "Unlock" : "Lock"}

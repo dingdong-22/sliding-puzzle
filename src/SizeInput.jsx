@@ -6,12 +6,13 @@ function SizeInput(props) {
   let max = 20;
   function confirmSize() {
     let root = document.querySelector(":root");
+    let body = document.querySelector("body");
     if (props.lock || size < min || size > max) {
-      root.style.setProperty(
+      body.style.setProperty(
         "--clr-input-border",
         "var(--clr-input-border-invalid)"
       );
-      root.style.setProperty(
+      body.style.setProperty(
         "--clr-input-background",
         "var(--clr-input-background-invalid)"
       );
@@ -19,11 +20,11 @@ function SizeInput(props) {
     }
 
     root.style.setProperty("--size", size);
-    root.style.setProperty(
+    body.style.setProperty(
       "--clr-input-border",
       "var(--clr-input-border-valid)"
     );
-    root.style.setProperty(
+    body.style.setProperty(
       "--clr-input-background",
       "var(--clr-input-background-valid)"
     );

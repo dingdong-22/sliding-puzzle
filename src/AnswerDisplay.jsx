@@ -2,13 +2,14 @@ function AnswerDisplay(props) {
   function createDisplay() {
     let mapping = props.answer.map((x, i) => {
       return (
-        <div id={`pos${i}`} className="answer-value">
+        <div className="answer-value" id={`pos${i}`} key={i}>
           {x}
         </div>
       );
     });
     return mapping;
   }
+
   if (props.answer.length > 0) {
     return (
       <div>

@@ -21,6 +21,25 @@ function App() {
   let [seconds, setSeconds] = useState(250);
   let [helped, setHelped] = useState(false);
   let [moves, setMoves] = useState(0);
+  let [finished, setFinished] = useState(false);
+
+  function checkAnswer() {
+    if (shuffled && !finished) {
+      for (let i = 0; i < order.length; i++) {
+        if (order[i] === correctOrder[i]) {
+          continue;
+        } else {
+          return false;
+        }
+      }
+      setFinished(true);
+      setShuffled(false);
+      return true;
+    }
+    return;
+  }
+
+  checkAnswer();
 
   return (
     <div>
@@ -43,6 +62,7 @@ function App() {
           correctOrder={correctOrder}
           helped={helped}
           moves={moves}
+          finished={finished}
         />
       ) : null}
       <div className="board">
@@ -66,6 +86,7 @@ function App() {
           setAnswer={setAnswer}
           setHelped={setHelped}
           setMoves={setMoves}
+          setFinished={setFinished}
         />
         <Lock order={order} shuffled={shuffled} lock={lock} setLock={setLock} />
         <Solver

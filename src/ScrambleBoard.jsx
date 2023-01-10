@@ -62,7 +62,8 @@ function ScrambleBoard(props) {
     props.setShuffled(true);
     props.setAnswer([]);
     props.setHelped(false);
-    props.setMoves(0)
+    props.setMoves(0);
+    props.setFinished(false);
   }
 
   if (!props.lock && props.order.length > 0) {

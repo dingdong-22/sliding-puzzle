@@ -3,28 +3,19 @@ import { useState, useEffect } from "react";
 function StatusDisplay(props) {
   let [time, setTime] = useState(0);
 
-  function checkAnswer() {
-    for (let i = 0; i < props.order.length; i++) {
-      if (props.order[i] === props.correctOrder[i]) {
-        continue;
-      } else {
-        return false;
-      }
-    }
-    return true;
-  }
-
   useEffect(() => {
-    if (!props.helped) {
+    if (!props.finished) {
       let temp = setInterval(() => setTime(time + 1), 1000);
       return () => clearInterval(temp);
     }
-  }, [time, props.helped]);
+  }, [time, props.helped, props.finished]);
 
-  if (!props.helped && props.shuffled) {
-    if (checkAnswer()) {
+  if (!props.helped) {
+    if (props.finished) {
       return (
-        <div className="status-display">Congratulations ! You took: {time}</div>
+        <div className="status-display">
+          Congratulations ! You took: {time} seconds !
+        </div>
       );
     } else {
       return (
@@ -37,3 +28,5 @@ function StatusDisplay(props) {
 }
 
 export default StatusDisplay;
+
+//timer has a bug when completed it still increments

@@ -95,7 +95,7 @@ function convertToNestedArr(n, arr) {
 }
 
 //insert props order and props answer
-function slidePuzzle(order, correctOrder, setAnswer) {
+function slidePuzzle(order, correctOrder, setAnswer, setHelped) {
   //convert to 2d matrix
   let n = Math.sqrt(order.length);
   let board = convertToNestedArr(n, order);
@@ -207,6 +207,7 @@ function slidePuzzle(order, correctOrder, setAnswer) {
           seq.map((x) => parseInt(x))
         );
         setAnswer(seq.map((x) => parseInt(x)));
+        setHelped(true);
         return seq.map((x) => parseInt(x));
       }
 
@@ -320,7 +321,12 @@ function Solver(props) {
           <button
             className="solver-button"
             onClick={() => {
-              slidePuzzle(props.order, props.correctOrder, props.setAnswer);
+              slidePuzzle(
+                props.order,
+                props.correctOrder,
+                props.setAnswer,
+                props.setHelped
+              );
             }}
           >
             Show Solution

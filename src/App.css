@@ -119,7 +119,7 @@ input {
 .board {
   display: grid;
   justify-content: center;
-  margin: 10px;
+  margin: 5px;
   grid-template-rows: repeat(var(--size), 70px);
   grid-template-columns: repeat(var(--size), 70px);
 }

@@ -10,7 +10,7 @@ function SpeedButtons(props) {
       }
     }
   }
-
+  
   return (
     <div>
       <div className="speed-buttons-container">

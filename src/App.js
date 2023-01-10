@@ -19,17 +19,7 @@ function App() {
   let [answer, setAnswer] = useState([]);
   let [on, setOn] = useState(false);
   let [seconds, setSeconds] = useState(250);
-
-  function checkAnswer(order) {
-    for (let i = 0; i < order.length; i++) {
-      if (order[i] === correctOrder[i]) {
-        continue;
-      } else {
-        return false;
-      }
-    }
-    return true;
-  }
+  let [helped, setHelped] = useState(false);
 
   return (
     <div>
@@ -45,7 +35,13 @@ function App() {
         setCorrectOrder={setCorrectOrder}
         setAnswer={setAnswer}
       />
-      {shuffled ? checkAnswer(order) ? <StatusDisplay /> : null : null}
+      {lock ? (
+        <StatusDisplay
+          order={order}
+          correctOrder={correctOrder}
+          helped={helped}
+        />
+      ) : null}
       <div className="board">
         <Board
           order={order}
@@ -63,6 +59,7 @@ function App() {
           setShuffled={setShuffled}
           lock={lock}
           setAnswer={setAnswer}
+          setHelped={setHelped}
         />
         <Lock order={order} shuffled={shuffled} lock={lock} setLock={setLock} />
         <Solver
@@ -72,6 +69,7 @@ function App() {
           correctOrder={correctOrder}
           answer={answer}
           setAnswer={setAnswer}
+          setHelped={setHelped}
         />
         <AutoPlay
           order={order}
@@ -84,7 +82,9 @@ function App() {
           setSeconds={setSeconds}
         />
       </div>
-      <SpeedButtons seconds={seconds} setSeconds={setSeconds} />
+      {answer.length > 0 ? (
+        <SpeedButtons seconds={seconds} setSeconds={setSeconds} />
+      ) : null}
       <div className="answer-container">
         <AnswerDisplay
           correctOrder={correctOrder}

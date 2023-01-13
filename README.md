@@ -4,15 +4,19 @@ This is a Sliding Puzzle Game, the aim of the game is to arrange a scrambled boa
 
 # Features
 
-![Features](/resource/features.png)
+<!-- ![Features](/resource/features.png) -->
+<img src="./resource/features.png" width="500" />
 
 ## Red
+
 - Switch between light and dark colour schemes
 
 ## Blue
+
 - Enter a value for **N** then confirm to set size
 
 ## Green
+
 - Scramble: Shuffles the board into a random arrangement
 - Lock/Unlock: If the board is locked, you cannot update the board size or scramble, if the board is unlocked you cannot move with the tiles
 - Hide/Show solution: Calculates a valid solution that you can follow along
@@ -20,19 +24,22 @@ This is a Sliding Puzzle Game, the aim of the game is to arrange a scrambled boa
 - <</>>: Adjusts the speed of the play speed
 
 ## Orange
+
 - Displays the move order of the calculated solution, the next move being the highlighted box
 
 ## Other Features
+
 - Timer count when board is scrambled then locked
 - Move count when board is scambled then locked
 
 # Demo
 
-![Demo](/resource/demo.gif)
+<!-- ![Demo](/resource/demo.gif) -->
+<img src="./resource/demo.gif" width="500" />
 
 ## Authors
 
-- Me =)
+- Me
 
 ## Acknowledgments
 

@@ -28,5 +28,3 @@ function StatusDisplay(props) {
 }
 
 export default StatusDisplay;
-
-//timer has a bug when completed it still increments

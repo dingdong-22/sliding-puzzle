@@ -358,4 +358,4 @@ function Solver(props) {
 
 export default Solver;
 
-//save the solve order then play it
+//save the solve order then play it 

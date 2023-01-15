@@ -10,7 +10,7 @@ function SpeedButtons(props) {
       }
     }
   }
-  
+
   return (
     <div>
       <div className="speed-buttons-container">
@@ -22,7 +22,7 @@ function SpeedButtons(props) {
         </button>
       </div>
       <div className="speed-display">
-        Moves per second : {1000 / props.seconds}
+        Moves per second : ~{1000 / props.seconds}
       </div>
     </div>
   );

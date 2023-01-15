@@ -3,7 +3,7 @@ import { useState } from "react";
 function SizeInput(props) {
   let [size, setSize] = useState(3);
   let min = 3;
-  let max = 20;
+  let max = 15;
   function confirmSize() {
     let root = document.querySelector(":root");
     let body = document.querySelector("body");
@@ -43,7 +43,7 @@ function SizeInput(props) {
 
   return (
     <div className="size-input-container">
-      <label htmlFor="size-input-box">Enter board size (3-20):</label>
+      <label htmlFor="size-input-box">Enter board size (3-15):</label>
       <div>
         <input
           id="size-input-box"

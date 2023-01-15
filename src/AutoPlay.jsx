@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import SpeedButtons from "./SpeedButtons";
+import { useEffect } from "react";
 
 function AutoPlay(props) {
   function play() {

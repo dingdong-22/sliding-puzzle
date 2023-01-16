@@ -110,7 +110,7 @@ function App() {
         />
       </div>
       {answer.length > 0 ? (
-        <SpeedButtons seconds={seconds} setSeconds={setSeconds} />
+        <SpeedButtons order = {order} seconds={seconds} setSeconds={setSeconds} />
       ) : null}
       <div className="answer-container">
         <AnswerDisplay

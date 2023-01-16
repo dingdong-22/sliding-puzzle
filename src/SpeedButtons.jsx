@@ -22,7 +22,9 @@ function SpeedButtons(props) {
         </button>
       </div>
       <div className="speed-display">
-        Moves per second : ~{1000 / props.seconds}
+        {Math.sqrt(props.order.length) < 9
+          ? `Moves per second : ~${1000 / props.seconds}`
+          : `Speed : Slow`}
       </div>
     </div>
   );

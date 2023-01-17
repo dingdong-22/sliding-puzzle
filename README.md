@@ -27,10 +27,11 @@ This is a Sliding Puzzle Game, the aim of the game is to arrange a scrambled boa
 
 - Displays the move order of the calculated solution, the next move being the highlighted box
 
-## Other Features
+## Other Features And Information
 
 - Timer count when board is scrambled then locked
 - Move count when board is scambled then locked
+- For boards larger than 8x8, auto-playing the solution will be noticeably slower than smaller boards
 
 # Demo
 

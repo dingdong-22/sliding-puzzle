@@ -1,3 +1,5 @@
+[Link](https://sliding-puzzle-ca9cd4.netlify.app/)
+
 # Sliding Puzzle App
 
 This is a Sliding Puzzle Game, the aim of the game is to arrange a scrambled board of size **N** back into it's original position ! <br>The board consists of tiles from **0** to **N^2**, any tiles orthogonally adjacent to tile **0** may switch places with tile **0**.
